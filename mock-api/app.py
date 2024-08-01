@@ -1,15 +1,14 @@
-from uuid import uuid4
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from flask_cors import CORS
 import json
-
+import os
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
 
 jwt = JWTManager(app)
-CORS(app) # Enable CORS for all routes
+CORS(app)  # Enable CORS for all routes
 
 with open('data/users.json') as f:
     users = json.load(f)
@@ -20,19 +19,32 @@ with open('data/places.json') as f:
 # In-memory storage for new reviews
 new_reviews = []
 
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/place')
+def place():
+    return render_template('place.html')
+
+
 @app.route('/login', methods=['POST'])
 def login():
     email = request.json.get('email')
     password = request.json.get('password')
 
-    user = next((u for u in users if u['email'] == email and u['password'] == password), None)
-    
+    user = next(
+        (u for u in users if u['email'] == email and u['password'] == password), None)
+
     if not user:
         print(f"User not found or invalid password for: {email}")
         return jsonify({"msg": "Invalid credentials"}), 401
 
     access_token = create_access_token(identity=user['id'])
     return jsonify(access_token=access_token)
+
 
 @app.route('/places', methods=['GET'])
 def get_places():
@@ -51,6 +63,7 @@ def get_places():
         for place in places
     ]
     return jsonify(response)
+
 
 @app.route('/places/<place_id>', methods=['GET'])
 def get_place(place_id):
@@ -79,6 +92,7 @@ def get_place(place_id):
     }
     return jsonify(response)
 
+
 @app.route('/places/<place_id>/reviews', methods=['POST'])
 @jwt_required()
 def add_review(place_id):
@@ -98,6 +112,7 @@ def add_review(place_id):
 
     new_reviews.append(new_review)
     return jsonify({"msg": "Review added"}), 201
+
 
 if __name__ == '__main__':
     app.run(debug=True)
