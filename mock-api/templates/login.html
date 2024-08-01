@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="static/icon.png">
+  <link rel="stylesheet" href="static/styles.css">
 </head>
 
 <body>
-  <div id="header"></div>
+  {% include 'header.html' %}
   <main>
     <form id="login-form">
       <h2>Login</h2>
@@ -23,8 +23,8 @@
       <button type="submit">Login</button>
     </form>
   </main>
-  <div id="footer"></div>
-  <script src="scripts.js"></script>
+  {% include 'footer.html' %}
+  <script src="static/scripts.js"></script>
 </body>
 
 </html>

@@ -5,18 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Place Details</title>
-  <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="static/icon.png">
+  <link rel="stylesheet" href="static/styles.css">
 </head>
 
 <body>
-  <div id="header"></div>
+  {% include 'header.html' %}
   <main>
     <section id="place-details" class="place-details">
       <h1>Beatiful Beach House</h1>
 
       <section id="place-info" class="place-info">
-        <a><img src="logo.png" alt="Place Image" class="place-image-lage"></a>
+        <a><img src="static/logo.png" alt="Place Image" class="place-image-lage"></a>
 
         <p><strong>Host: </strong>John Doe</p>
         <p><strong>Price per night: </strong>$150</p>
@@ -42,10 +42,10 @@
       </section>
     </section>
 
-    <div id="add-review"></div>
+    {% include 'add_review.html' %}
   </main>
-  <div id="footer"></div>
-  <script src="scripts.js"></script>
+  {% include 'footer.html' %}
+  <script src="static/scripts.js"></script>
 </body>
 
 </html>
