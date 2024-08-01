@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Places</title>
+  <link rel="icon" href="icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="header"></div>
+  <main>
+    <section id="avaible-places" class="avaible-places">
+      <h1>Avaible Places</h1>
+    </section>
+
+    <section id="filter" class="filter">
+      <label for="country-filter">Filter by Country:</label>
+      <select id="country-filter" class="country-filter">
+        <option value="all">All</option>
+        <option value="canada">Canada</option>
+        <option value="us">United States</option>
+      </select>
+    </section>
+
+    <section id="places-list" class="places-list">
+      <section id="us-section" class="place-card">
+        <h2>Beatiful Beach House</h2>
+
+        <a><img src="logo.png" alt="Place Image" class="place-image"></a>
+
+        <p>Price per night: $150</p>
+        <p>Location: Los Angeles, United States</p>
+
+        <a href="place.html" class="details-button">View Details</a>
+      </section>
+
+      <section id="canada-section" class="place-card">
+        <h2>Cozy Cabin</h2>
+
+        <a><img src="logo.png" alt="Place Image" class="place-image"></a>
+
+        <p>Price per night: $100</p>
+        <p>Location: Toronto, Canada</p>
+
+        <a href="place.html" class="details-button">View Details</a>
+      </section>
+
+      <section id="us-section" class="place-card">
+        <h2>Modern Apartment</h2>
+
+        <a><img src="logo.png" alt="Place Image" class="place-image"></a>
+
+        <p>Price per night: $200</p>
+        <p>Location: New York, United States</p>
+
+        <a href="place.html" class="details-button">View Details</a>
+      </section>
+
+    </section>
+  </main>
+  <div id="footer"></div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
