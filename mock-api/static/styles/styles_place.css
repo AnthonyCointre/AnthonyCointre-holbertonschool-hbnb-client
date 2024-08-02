@@ -78,3 +78,7 @@ main {
 .review-card p {
   margin-bottom: 10px;
 }
+
+.first-words {
+  font-weight: bold;
+}

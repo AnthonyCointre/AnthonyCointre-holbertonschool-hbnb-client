@@ -34,15 +34,16 @@ main {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .login h2 {
+  text-align: center;
   margin-bottom: 20px;
 }
 
 .login-label {
   margin-bottom: 10px;
+  margin-left: 5px;
 }
 
 .login-input {

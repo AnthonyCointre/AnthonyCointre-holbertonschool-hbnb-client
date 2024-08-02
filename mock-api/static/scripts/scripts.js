@@ -19,4 +19,18 @@ document.addEventListener('DOMContentLoaded', function () {
     .then((data) => {
       document.getElementById('add-review').innerHTML = data;
     });
+
+  // Make first two words and colon bold
+  const paragraphs = document.querySelectorAll('p.bold-first-words');
+
+  paragraphs.forEach(paragraph => {
+    const text = paragraph.innerHTML;
+    const regex = /^([^:]+:)/; // Regex to match everything up to the first colon
+    const match = text.match(regex);
+
+    if (match) {
+      const boldText = `<span class="first-words">${match[0]}</span>`;
+      paragraph.innerHTML = text.replace(regex, boldText);
+    }
+  });
 });
