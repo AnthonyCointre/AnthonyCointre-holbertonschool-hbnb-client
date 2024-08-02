@@ -89,3 +89,7 @@ main {
   cursor: pointer;
   margin-top: 20px;
 }
+
+.first-words {
+  font-weight: bold;
+}
