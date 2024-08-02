@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('add-review').innerHTML = data;
     });
 
-  // Make first two words and colon bold
+  // Make first words and colon bold
   const paragraphs = document.querySelectorAll('p.bold-first-words');
 
   paragraphs.forEach(paragraph => {
