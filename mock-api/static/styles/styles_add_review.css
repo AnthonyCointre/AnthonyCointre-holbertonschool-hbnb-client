@@ -1,0 +1,39 @@
+.add-review {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.add-review h2 {
+  font-size: x-large;
+}
+
+.review-label {
+  font-size: large;
+  font-weight: bolder;
+}
+
+.review-textarea {
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.review-select {
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.review-submit {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff9800;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
