@@ -33,4 +33,24 @@ document.addEventListener('DOMContentLoaded', function () {
       paragraph.innerHTML = text.replace(regex, boldText);
     }
   });
+
+  // Filter by country
+  const countryFilter = document.getElementById("country-filter");
+  const placeCards = document.querySelectorAll(".place-card");
+
+  countryFilter.addEventListener("change", function () {
+    const selectedCountry = countryFilter.value;
+
+    placeCards.forEach(card => {
+      if (selectedCountry === "all") {
+        card.style.display = "block";
+      } else {
+        if (card.getAttribute("data-country") === selectedCountry) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    });
+  });
 });
