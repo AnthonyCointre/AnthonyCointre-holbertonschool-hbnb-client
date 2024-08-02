@@ -20,12 +20,12 @@ with open('data/places.json') as f:
 new_reviews = []
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
 
-@app.route('/place')
+@app.route('/place', methods=['GET'])
 def place():
     return render_template('place.html')
 
