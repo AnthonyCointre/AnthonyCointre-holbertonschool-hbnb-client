@@ -30,6 +30,11 @@ def place():
     return render_template('place.html')
 
 
+@app.route('/login', methods=['GET'])
+def get_login():
+    return render_template('login.html')
+
+
 @app.route('/login', methods=['POST'])
 def login():
     email = request.json.get('email')
